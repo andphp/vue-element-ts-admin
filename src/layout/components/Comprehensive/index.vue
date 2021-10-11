@@ -1,5 +1,5 @@
 <template>
-  sddddd
+  this is layout of comprehensive.
 </template>
 
 <script>

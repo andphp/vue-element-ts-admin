@@ -5,5 +5,6 @@ export default interface settingStateTypes {
   showSettings: Boolean
   tableHeight:Number
   hideHeader:boolean
-  lang:String
+  lang:String,
+  layoutStyle:String
 }

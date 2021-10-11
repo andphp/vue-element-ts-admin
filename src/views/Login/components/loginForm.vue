@@ -84,8 +84,8 @@ export default defineComponent({
     const codeText = ref('获取验证码')
     const state = reactive<stateType>({
       loginForm: {
-        email: '',
-        password: ''
+        email: 'admin@outlook.com',
+        password: '123456'
       },
       registerForm: {
         email: '',

@@ -16,7 +16,8 @@ const settingsModule: Module<settingStateTypes, RootStateTypes> = {
     showSettings,
     tableHeight: 600, // 表格宽度
     hideHeader:false,
-    lang:'/zh-CN'
+    lang:'/zh-CN',
+    layoutStyle:'vertical'   // 布局种类 horizontal横向 vertical纵向 gallery画廊 comprehensive综合 common常规
 
   },
   mutations: {
@@ -35,6 +36,9 @@ const settingsModule: Module<settingStateTypes, RootStateTypes> = {
     toggleLang:(state: settingStateTypes,payload:any)=>{
       state.lang=payload.lang
     },
+    toggleLayout:(state: settingStateTypes,layout:String)=>{
+      state.layoutStyle=layout
+    },
   },
   actions: {
     toToggleHeader({commit}){
@@ -48,6 +52,9 @@ const settingsModule: Module<settingStateTypes, RootStateTypes> = {
     },
     toToggleLang({commit},payload){
       commit('toggleLang',payload);
+    },
+    toToggleLayout({commit},layout){
+      commit('toggleLayout',layout);
     }
   },
   getters: {
@@ -63,6 +70,9 @@ const settingsModule: Module<settingStateTypes, RootStateTypes> = {
     },
     getLangState(state:settingStateTypes){
       return state.lang
+    },
+    getLayoutStyle(state:settingStateTypes){
+      return state.layoutStyle
     }
   },
 };
