@@ -15,8 +15,12 @@
       <RightDrawer v-if="showSetting">
         <div class="setting-item">
           <div class="setting-draw-title">主题风格</div>
-
           <theme-pick @submit="submitForm"></theme-pick>
+          <div class="divider"></div>
+        </div>
+        <div class="setting-item">
+          <div class="setting-draw-title">布局区域</div>
+          <layout-area></layout-area>
           <div class="divider"></div>
         </div>
         <div class="setting-item">
@@ -43,6 +47,7 @@ import AppMain from './components/AppMain.vue'
 import RightDrawer from './components/RightSetting/RightDrawer.vue'
 import ThemePick from './components/RightSetting/themePick/index.vue'
 import ContentArea from './components/RightSetting/contentArea/index.vue'
+import LayoutArea from './components/RightSetting/layoutArea/index.vue'
 
 export default defineComponent({
   name: 'Vertical',
@@ -52,10 +57,10 @@ export default defineComponent({
     AppMain,
     RightDrawer,
     ThemePick,
-    ContentArea
+    ContentArea,
+    LayoutArea
   },
   setup() {
-    
     const { getIndexStyle } = useFiles()
     useResize()
     const store = useStore()
@@ -136,7 +141,7 @@ export default defineComponent({
       handleSidebarLogoChange,
       submitForm,
       ...toRefs(colors)
-    };
+    }
   }
 })
 </script>

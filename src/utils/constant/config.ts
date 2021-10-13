@@ -61,6 +61,10 @@ export const langConfig =  {
         '/zh-CN': '主题色',
         '/en-US': 'Theme color'
       },
+      layout: {
+        '/zh-CN': '布局',
+        '/en-US': 'Theme layout'
+      },
       headerArea:{
         '/zh-CN': '顶栏',
         '/en-US': 'Header Area'

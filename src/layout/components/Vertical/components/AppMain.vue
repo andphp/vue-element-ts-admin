@@ -5,14 +5,18 @@
     </el-tabs>
     <router-view v-if="$route.meta.keepAlive" v-slot="{ Component }">
       <transition name="fade" mode="out-in">
-        <component :is="Component" :key="$route.path" />
+        <div>
+          <component :is="Component" :key="$route.path" />
+        </div>
       </transition>
     </router-view>
 
     <router-view v-if="!$route.meta.keepAlive" v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <keep-alive>
-          <component :is="Component" :key="$route.path" />
+          <div>
+            <component :is="Component" :key="$route.path" />
+          </div>
         </keep-alive>
       </transition>
     </router-view>
@@ -22,7 +26,6 @@
 import { computed, defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from '@/store/index'
-
 
 export default defineComponent({
   name: 'AppMain',
@@ -34,6 +37,7 @@ export default defineComponent({
     const lang = computed(() => store.getters['settingsModule/getLangState'])
 
     const router = useRouter()
+
     // mothods
     /**
      * @description 移除tab

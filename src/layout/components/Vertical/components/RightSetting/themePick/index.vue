@@ -16,40 +16,40 @@ import { defineComponent, reactive, ref } from 'vue'
 import { langConfig } from '@/utils/constant/config'
 
 export default defineComponent({
-  props: {
-    lang: {
-      type: String,
-      default: '/zh-CN'
-    }
-  },
-  setup() {
-    const formRef = ref(null)
-    const colors = reactive({
-      primary: '#1890FF'
-    })
-    const predefineColors = ref(['#1890ff', '#f5222d', '#fa541c', '#faad14', '#13c2c2', '#52c41a', '#2f54eb', '#722ed1'])
-    const resetForm = () => {
-      formRef.value.resetFields()
-    }
+    props: {
+        lang: {
+            type: String,
+            default: '/zh-CN'
+        }
+    },
+    setup() {
+        const formRef = ref(null)
+        const colors = reactive({
+            primary: '#1890FF'
+        })
+        const predefineColors = ref(['#1890ff', '#f5222d', '#fa541c', '#faad14', '#13c2c2', '#52c41a', '#2f54eb', '#722ed1'])
+        const resetForm = () => {
+            formRef.value.resetFields()
+        }
 
-    return {
-      predefineColors,
-      colors,
-      langConfig,
-      formRef,
-      resetForm
+        return {
+            predefineColors,
+            colors,
+            langConfig,
+            formRef,
+            resetForm
+        }
     }
-  }
 })
 </script>
 <style lang="stylus" scoped>
-.theme-form{
-  .color-buttons{
-    width 100%
-    display flex
-    flex-direction row
-    justify-content center
-    align-items center
-  }
+.theme-form {
+    .color-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>
