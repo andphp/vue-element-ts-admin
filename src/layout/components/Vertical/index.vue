@@ -44,10 +44,10 @@ import useResize from '@/hooks/useResize'
 import Sidebar from './components/Sidebar/index.vue'
 import Navbar from './components/Navbar.vue'
 import AppMain from './components/AppMain.vue'
-import RightDrawer from './components/RightSetting/RightDrawer.vue'
-import ThemePick from './components/RightSetting/themePick/index.vue'
-import ContentArea from './components/RightSetting/contentArea/index.vue'
-import LayoutArea from './components/RightSetting/layoutArea/index.vue'
+import RightDrawer from '@/components/RightSetting/RightDrawer.vue'
+import ThemePick from '@/components/RightSetting/themePick/index.vue'
+import ContentArea from '@/components/RightSetting/contentArea/index.vue'
+import LayoutArea from '@/components/RightSetting/layoutArea/index.vue'
 
 export default defineComponent({
   name: 'Vertical',
